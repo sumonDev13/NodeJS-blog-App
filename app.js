@@ -13,6 +13,11 @@ app.use(express.static('public'));
 
 connectDB();
 
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+
 //temp engine
 app.set('view engine','ejs');
 app.use(expressLayout);
