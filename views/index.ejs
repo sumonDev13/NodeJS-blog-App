@@ -1,26 +1,32 @@
 <div class="author">
-    <h1 class="author__heading">Hi, I am Sumon.</h1>
-    <p class="author__body">Web developer and content creator.</p>
-  </div>
-  
-  <img src="/img/hero-image.jpg" alt="person looking out through window" class="hero-image" width="981" height="528">
-  
-  <section class="articles">
-    <h2 class="articles__heading">Latest Posts</h2>
-  
-    <ul class="article-ul">
-      
-        <li>
-          <a href="#">
-            <span>Post Title</span>
-            <span class="article-list_date">Date</span>
-          </a>
-           
-        </li>
-      
-    </ul>
+  <h1 class="author__heading">Hi, I am Sumon.</h1>
+  <p class="author__body">Web developer and content creator.</p>
+</div>
 
-    <a href="#" class="pagination">&lt; View older Posts</a>
+<img
+  src="/img/hero-image.jpg"
+  alt="person looking out through window"
+  class="hero-image"
+  width="981"
+  height="528"
+/>
 
-  
-  </section>
+<section class="articles">
+  <h2 class="articles__heading">Latest Posts</h2>
+
+  <ul class="article-ul">
+    <% data.forEach(post => { %>
+
+    <li>
+      <a href="/post/<%= post._id %>">
+        <span><%= post.title %></span>
+        <span class="article-list_date"
+          ><%= post.createdAt.toDateString() %></span
+        >
+      </a>
+    </li>
+    <% }) %>
+  </ul>
+
+  <a href="#" class="pagination">&lt; View older Posts</a>
+</section>
